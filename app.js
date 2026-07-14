@@ -39,7 +39,7 @@ app.post('/add-team', async (req, res) => {
     res.json({'status': 'success'});
 })
 
-app.post('/view-teams', async (req, res) => {
+app.get('/view-teams', async (req, res) => {
     const teams = await Team.find();
     res.json(teams);
 })
