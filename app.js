@@ -33,3 +33,12 @@ const Team = mongoose.model('Team', new mongoose.Schema(
         stationNumber: Number
     }
 ));
+
+app.post('/add-team', async (req, res) => {
+    await Team.create(req.body);
+    res.json({'status': 'success'});
+})
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+})
