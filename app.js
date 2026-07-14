@@ -39,6 +39,11 @@ app.post('/add-team', async (req, res) => {
     res.json({'status': 'success'});
 })
 
+app.get('/view-teams', async (req, res) => {
+    const teams = await Team.find();
+    res.json(teams);
+})
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 })
